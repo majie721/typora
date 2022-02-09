@@ -1,0 +1,224 @@
+<!--
+ * @Description: ba
+ * @version: 
+ * @Author: MJ
+ * @Date: 2022-02-09 09:57:42
+ * @LastEditTime: 2022-02-09 14:34:16
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="width: 100%;height: 100%;">
+
+
+    <div class="box">
+        <div class="tz tz1">
+            <div class="cyc"></div>
+        </div>
+        <div class="tz tz2">
+            <div class="cyc"></div>
+            <div class="cyc"></div>
+        </div>
+        <div class="tz tz3">
+            <div class="cyc"></div>
+            <div class="cyc"></div>
+            <div class="cyc"></div>
+        </div>
+        <div class="tz tz4">
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>    
+        </div>
+        <div class="tz tz5">
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>
+
+            <div>
+                <div class="cyc"></div>
+            </div>
+
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>
+
+        </div>
+        <div class="tz tz6">
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>
+            <div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+                <div class="cyc"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<style>
+
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        height: 100%;
+        width: 100%;
+        background-color: antiquewhite;
+    }
+    .box{
+        box-sizing: border-box;
+    }
+
+    .tz{
+       width: 80px;
+       height: 80px;
+       box-sizing: border-box;
+       padding: 8px;
+       background-color: #fff;
+       opacity: 0.5;
+       border-radius: 4px;
+       margin-top: 20px;
+       position: absolute;
+       border: 1px solid gray;
+       color: blue;
+       font-size: larger;
+    }
+
+    .cyc{
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+    }
+
+
+    .box>div:nth-child(1){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box>div:nth-child(2),.box>div:nth-child(3){
+        display: flex;
+        flex-direction:column ;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .tz4{
+        display: flex;
+        flex-grow: column wrap;
+        justify-content: space-around;
+        
+    }
+
+    .tz4>div{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+    }
+
+    .tz5{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .tz5>div:nth-child(1),.tz5>div:nth-child(3){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .tz5>div:nth-child(2){
+        align-self: center;
+    }
+
+    .tz6{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .tz6 > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+    .tz1{
+        transform: translateZ(40px);
+    }
+
+    .tz3{
+        transform: translateZ(-40px)  rotateY(-180deg);
+    }
+
+     .tz2{
+        transform: translateY(40px) rotateX(-90deg);
+    } 
+
+    .tz4{
+        transform: translateY(-40px) rotateX(90deg);
+    } 
+
+    .tz6{
+        transform: translateX(-40px) rotateY(-90deg);
+    }
+
+    .tz5{
+        transform: translateX(40px) rotateY(90deg);
+    }
+
+
+    .box{
+        width: 80px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotateZ(30deg) rotateX(-45deg);
+        transform-style: preserve-3d;
+        animation: run 4s linear infinite;
+    }
+
+
+    @keyframes run {
+        0%{
+           transform:translate(-50%, -50%) rotateZ(30deg) rotateX(-45deg) rotateY(0deg);
+        }
+        50%{
+            transform: translate(-50%, -50%) rotateZ(30deg) rotateX(-45deg) rotateY(180deg);
+        }
+        100%{
+            transform: translate(-50%, -50%) rotateZ(30deg) rotateX(-45deg) rotateY(360deg);
+        }
+    }
+    
+</style>
+</html>
